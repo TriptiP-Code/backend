@@ -14,7 +14,7 @@ const pool = new Pool({
 });
 
 app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
+  res.send("Backend is running 🚀 , now this is github action test 1 ");
 });
 
 app.get("/health", async (req, res) => {
