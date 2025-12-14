@@ -26,6 +26,9 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
+            sudo systemctl enable docker
+            sudo systemctl start docker
+            sudo usermod -aG docker ec2-user
             docker pull ${{ secrets.DOCKER_USERNAME }}/node-postgres-backend:latest1
             docker stop backend || true
             docker rm backend || true
