@@ -16,7 +16,6 @@ jobs:
 
       - name: Build & Push Image
         run: |
-          cd backend
           docker build -t ${{ secrets.DOCKER_USERNAME }}/node-postgres-backend:latest1 .
           docker push ${{ secrets.DOCKER_USERNAME }}/node-postgres-backend:latest1
 
